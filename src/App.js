@@ -1,16 +1,16 @@
 import React, {useEffect} from "react";
-import tmdb from "./tmdb";
+import Tmdb from "./Tmdb";
 
-export default () => {
+export const App = ()=>  {
 
-useEffect(()=>{
-const loadAll = async () =>{
-//pegando a lista total
-let list = await tmdb.getHomeList();
-console.log(list);
+ useEffect(()=> {
+  const loadAll = async () =>{
+
+    let list = await Tmdb.getHomeList();
+    console.log(list);
 }
 loadAll();
-},[]);
+},[])
 
   return(
     <div>
