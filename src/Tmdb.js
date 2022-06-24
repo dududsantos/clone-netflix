@@ -27,7 +27,7 @@ export default {
       {
         slug: "toprated",
         title: "Em Alta",
-        items: await basicFetch(`/movie/top_rated?language=pt-BR&api_key=${API_KEY}`)
+        items: await basicFetch(`/discover/movie?with_genres=878&language=pt-BR&api_key=${API_KEY}`)
       },
       {
         slug: "action",
@@ -36,7 +36,7 @@ export default {
       },
       {
         slug: "comedy",
-        title: "comedia",
+        title: "Comédia",
         items: await basicFetch(`/discover/movie?with_genres=35&language=pt-BR&api_key=${API_KEY}`)
       },
       {
@@ -56,4 +56,24 @@ export default {
       },
     ]
   },
+
+  getMovieInfo: async (movieId,type)=>{
+    let info ={};
+
+    if(movieId){
+      switch(type){
+        case 'movie':
+          info = await basicFetch(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+
+        break;
+        case 'tv':
+          info = await basicFetch(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+        break;
+        default:
+          info =null;
+          break;
+      }
+    }
+    return info;
+  }
 }
