@@ -48,7 +48,15 @@ export const App = () => {
   },[]);
 
   return (
+    
     <div className="page">
+      <head>
+      <title>Netlfix</title>
+      <meta
+          name="Administration"
+          content="V Simósio Norte-Nordeste de Bioinformática"
+        />
+    </head>
       <Header black={blackHeader}/>
 
       {featuredData && <FeaturedMovie item={featuredData} />}
@@ -57,6 +65,14 @@ export const App = () => {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
+
+      <footer>
+      Feito por Eduardo Santos 
+      <p>Baseado no Projeto da B7Web</p> 
+      </footer>
+      
+      {movieList.length <=0 &&
+      <div className="loading"><img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt='loading'/></div>}
     </div>
   );
 };
