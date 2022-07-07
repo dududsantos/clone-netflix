@@ -4,6 +4,8 @@ import { MovieRow } from "./components/MovieRow";
 import { FeaturedMovie } from "./components/FeaturedMovie";
 import { Header } from "./components/Header";
 import "./App.css";
+import { HeadProvider, Title, Link, Meta } from "react-head";
+
 
 export const App = () => {
   const [movieList, setMovieList] = useState([]);
@@ -48,17 +50,11 @@ export const App = () => {
   },[]);
 
   return (
+    <>
     
-    <div className="page">
-      <head>
-      <title>Netlfix</title>
-      <meta
-          name="Administration"
-          content="V Simósio Norte-Nordeste de Bioinformática"
-        />
-    </head>
-      <Header black={blackHeader}/>
-
+      
+  
+    <Header black={blackHeader}/>
       {featuredData && <FeaturedMovie item={featuredData} />}
       <section className="lists">
         {movieList.map((item, key) => (
@@ -73,6 +69,7 @@ export const App = () => {
       
       {movieList.length <=0 &&
       <div className="loading"><img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt='loading'/></div>}
-    </div>
+   
+    </>
   );
 };
