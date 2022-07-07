@@ -1,3 +1,7 @@
+#Clone da Netflix
+Clone do layout da Netflix, Feito com ReactJS.
+Baseado no Projeto da B7Web.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
