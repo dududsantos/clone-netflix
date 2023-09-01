@@ -1,5 +1,4 @@
 # Clone da Netflix
-Clone do layout da Netflix, Feito com ReactJS.
 Baseado no Projeto da B7Web.
 
 # Getting Started with Create React App
